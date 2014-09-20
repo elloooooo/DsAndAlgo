@@ -2,6 +2,7 @@ package dsTest;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -62,10 +63,53 @@ public class TwoSum {
 		return null;
 	}
 
+	private static class Node implements Comparable<Node>{
+		int pos,val;
+
+		@Override
+		public int compareTo(Node o) {
+			return this.val-o.val;
+		}
+	}
+	
+	public int[] twoSumII(int[] numbers, int target) {
+		List<Node> nodes = new ArrayList<Node>();
+		for(int i=0;i<numbers.length;i++){
+			Node _node = new Node();
+			_node.pos = i;
+			_node.val = numbers[i];
+			nodes.add(_node);
+		}
+
+		Collections.sort(nodes);
+		int begin=0,end=nodes.size()-1;
+		while(begin<end){
+			if(nodes.get(begin).val+nodes.get(end).val>target){
+				end--;
+			}else if(nodes.get(begin).val+nodes.get(end).val<target){
+				begin++;
+			}else{
+				break;
+			}
+		}
+		
+		int[] res = new int[2];
+		if(nodes.get(begin).pos>nodes.get(end).pos){
+			res[0] = nodes.get(end).pos+1;
+			res[1] = nodes.get(begin).pos+1;
+		}else{
+			res[0] = nodes.get(begin).pos+1;
+			res[1] = nodes.get(end).pos+1;
+		}
+		return res;
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		int[] numbers = { 0,4,3,0};
 		TwoSum t = new TwoSum();
-		int[] res = t.twoSum(numbers, 0);
+		int[] res = t.twoSumII(numbers, 0);
 		for (int elem : res) {
 			System.out.println(elem);
 		}
