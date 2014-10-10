@@ -50,8 +50,7 @@ public class LRUCache {
 		this.tail = null;
 		this.map = new HashMap();
 	}
-
-	public int get(int key) {
+	public synchronized int get(int key) {
 		int res = -1;
 		if (map.containsKey(key)) {
 			res = (Integer) map.get(key);
@@ -62,7 +61,7 @@ public class LRUCache {
 	
 	
 
-	public void set(int key, int value) {
+	public synchronized void set(int key, int value) {
 		if (map.containsKey(key)) {
 			int oldvalue = map.get(key);
 			map.put(key, value);
