@@ -44,8 +44,8 @@ public class LongestCommonSubsequence {
 		}
 		StringBuffer sbf = new StringBuffer();
 		
-		for(Character elem:res){
-			sbf.append(elem.toString());
+		for(char elem:res){
+			sbf.append(elem);
 		}
 		return sbf.toString();
 	}
