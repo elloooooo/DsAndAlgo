@@ -21,6 +21,7 @@ import java.util.List;
  */
 public class NQueens {
 	private List<int[]> solutions;
+
 	public List<String[]> solveNQueens(int n) {
 		List<String[]> res = new ArrayList<String[]>();
 		if (n == 0) {
@@ -48,26 +49,31 @@ public class NQueens {
 
 		for (int rows = 0; rows < solutions.size(); rows++) {
 			String[] _solution = new String[len];
-			
-			for(int j=0;j<len;j++){
+
+			for (int j = 0; j < len; j++) {
 				StringBuffer sbf = new StringBuffer();
 				for (int i = 0; i < len; i++) {
 					if (i == solutions.get(rows)[j]) {
 						sbf.append("Q");
-					}else{
+					} else {
 						sbf.append(".");
 					}
 				}
 				_solution[j] = sbf.toString();
 			}
-			
-			
+
 			res.add(_solution);
 		}
 
 		return res;
 	}
 
+	/**
+	 * @param queens
+	 * @param begin
+	 * @param solution
+	 *            È«ÅÅÁÐ
+	 */
 	private void permutation(int[] queens, int begin, int[] solution) {
 		if (begin < queens.length) {
 			for (int i = begin; i < queens.length; i++) {
