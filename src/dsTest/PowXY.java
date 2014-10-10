@@ -42,9 +42,10 @@ public class PowXY {
 			return 1;
 		if (y == 1)
 			return x;
-
-		double temp = ytimesx(x, y / 2);
-		res = y % 2 == 0 ? temp * temp : temp * temp * x;
+		//用移位代替/2
+		double temp = ytimesx(x, y >> 1);
+		//&1代替%2，判断奇数偶数
+		res = (y & 1) == 0 ? temp * temp : temp * temp * x;
 
 		return res;
 	}
@@ -56,8 +57,8 @@ public class PowXY {
 		// System.out.println((long)Math.pow(x, y));
 		// System.out.println(p.ytimesxLast3Digits(x, y));
 
-		double x = 34.00515;
-		int n = -3;
+		double x = 4;
+		int n = 2;
 		PowXY p = new PowXY();
 		double res = p.pow(x, n);
 		System.out.println(res);

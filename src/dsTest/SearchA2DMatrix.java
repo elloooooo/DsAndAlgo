@@ -23,30 +23,26 @@ package dsTest;
  * 因为如果target大于它，就可以排除一行
  */
 public class SearchA2DMatrix {
+	
 	public boolean searchMatrix(int[][] matrix, int target) {
-		int elemLen = matrix[0].length;
-		for(int i=0;i<matrix.length;i++){
-			if(target==matrix[i][elemLen-1]){
+		int cols = matrix[0].length-1;
+		int rows = 0;
+		
+		while(rows<matrix.length&&cols>=0){
+			if(target==matrix[rows][cols]){
 				return true;
-			}
-			
-			if(target>matrix[i][elemLen-1]){
-				continue;
-			}
-			
-			for(int j=elemLen-1;j>=0;j-- ){
-				if(matrix[i][j]==target){
-					return true;
-				}
+			}else if(target>matrix[rows][cols]){
+				rows++;
+			}else{
+				cols--;
 			}
 		}
-		
 		return false;
 	}
 
 	public static void main(String[] args) {
 		int[][] matrix = {{1,   3,  5,  7},{10, 11, 16, 20},{23, 30, 34, 50}};
-		int target = 3;
+		int target = 4;
 		SearchA2DMatrix s = new SearchA2DMatrix();
 		boolean res = s.searchMatrix(matrix, target);
 		System.out.println(res);

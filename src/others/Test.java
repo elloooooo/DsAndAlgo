@@ -15,8 +15,9 @@ class ListNodeImp extends ListNode{
 	
 	@Override
 	public void echo1() {
-		// TODO Auto-generated method stub
-		
+		final String a = "1233";
+		final String b = "123"+a.length(); 
+		System.out.println(a==b);
 	}
 }
 

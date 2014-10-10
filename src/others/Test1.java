@@ -72,6 +72,8 @@ public class Test1 {
 		x = x++;
 		System.out.println(x);
 		assert(x>2);
+		
+		
 	}
 
 }
