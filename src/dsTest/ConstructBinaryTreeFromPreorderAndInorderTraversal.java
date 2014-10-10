@@ -24,35 +24,35 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 	}
 
 	// 本不想复制数组，仅仅通过传入下标对输入数组进行控制，但是发现下标的计算是在是繁琐，无法调试正确
-//	public TreeNode buildTree1(int[] preorder, int[] inorder) {
-//		if (preorder.length == 0 || inorder.length == 0)
-//			return null;
-//		return buildTree(preorder, inorder, 0, preorder.length - 1, 0,
-//				inorder.length - 1);
-//	}
-//
-//	private TreeNode buildTree(int[] preorder, int[] inorder, int pstart,
-//			int pend, int istart, int iend) {
-//		TreeNode root = new TreeNode(preorder[pstart]);
-//		int rootIndex = istart;
-//
-//		while (rootIndex < iend) {
-//			if (inorder[rootIndex] == root.val) {
-//				break;
-//			}
-//			rootIndex++;
-//		}
-//		int leftLength = rootIndex - istart;
-//		int rightLength = iend - rootIndex;
-//
-//		root.left = buildTree(preorder, inorder, pstart + 1, pstart
-//				+ leftLength, istart, istart + leftLength - 1);
-//
-//		root.right = buildTree(preorder, inorder, pend - rightLength, pend,
-//				rootIndex + 1, rootIndex + rightLength - 1);
-//
-//		return root;
-//	}
+	// public TreeNode buildTree1(int[] preorder, int[] inorder) {
+	// if (preorder.length == 0 || inorder.length == 0)
+	// return null;
+	// return buildTree(preorder, inorder, 0, preorder.length - 1, 0,
+	// inorder.length - 1);
+	// }
+	//
+	// private TreeNode buildTree(int[] preorder, int[] inorder, int pstart,
+	// int pend, int istart, int iend) {
+	// TreeNode root = new TreeNode(preorder[pstart]);
+	// int rootIndex = istart;
+	//
+	// while (rootIndex < iend) {
+	// if (inorder[rootIndex] == root.val) {
+	// break;
+	// }
+	// rootIndex++;
+	// }
+	// int leftLength = rootIndex - istart;
+	// int rightLength = iend - rootIndex;
+	//
+	// root.left = buildTree(preorder, inorder, pstart + 1, pstart
+	// + leftLength, istart, istart + leftLength - 1);
+	//
+	// root.right = buildTree(preorder, inorder, pend - rightLength, pend,
+	// rootIndex + 1, rootIndex + rightLength - 1);
+	//
+	// return root;
+	// }
 
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 		if (preorder.length == 0) {
