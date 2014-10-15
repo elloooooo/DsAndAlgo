@@ -5,7 +5,11 @@ package dsTest;
  * 
  * For example, Given
  * 
- * 1 / \ 2 5 / \ \ 3 4 6
+ * 1 
+ * / \ 
+ * 2 5 
+ * / \ \ 
+ * 3 4 6
  * 
  * The flattened tree should look like: 1 \ 2 \ 3 \ 4 \ 5 \ 6
  * 
