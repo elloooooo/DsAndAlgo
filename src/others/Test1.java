@@ -73,7 +73,6 @@ public class Test1 {
 		System.out.println(x);
 		assert(x>2);
 		
-		
 	}
 
 }

@@ -38,8 +38,11 @@ class Child extends Father {
 
 public class Test2 {
 	public static void main(String[] args) {
-		Father f = new Child();
-		f.output();
+//		Father f = new Child();
+//		f.output();
+		
+		int a = 32;
+		System.out.println(a>>32);
 	}
 
 }
