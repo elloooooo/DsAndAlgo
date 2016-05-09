@@ -1,4 +1,4 @@
-package test.dsTest;
+package dsTest;
 
 import java.util.ArrayList;
 import java.util.List;

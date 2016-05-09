@@ -1,4 +1,4 @@
-package test.dsTest;
+package dsTest;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

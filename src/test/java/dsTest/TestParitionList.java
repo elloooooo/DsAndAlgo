@@ -1,4 +1,4 @@
-package test.dsTest;
+package dsTest;
 
 import junit.framework.TestCase;
 import dataStructure.ListNode;
